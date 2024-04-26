@@ -2,3 +2,4 @@ streamlit
 shap
 matplotlib
 xgboost
+folium
