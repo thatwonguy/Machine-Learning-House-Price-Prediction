@@ -22,7 +22,7 @@ This repo demonstrates usage of a custom pre-trained model that can be used over
 4. **ANALYSE DATA:**:
    - Again, this step goes hand in hand with the 2 previous steps inside your jupyter notebook environment typically and may start to involve f1-scores, variance/bias analysis, featuring engineering, correlation metrics, accuracy scores, and other statistical metrics to try and pin-point the best algorithm and solution for model training results and outputs. *A machine learning model that gives poor results is of no use ultimately.*
 5. **TRAIN MODEL:**
-   - In this case we utilized the sci-kit learn python library to carry out multiple models for testing to see which would provide as the best outcome:
+   - In this case we utilized the sci-kit learn python library to carry out multiple models for testing to see which would provide us the best outcome:
       - linear regression
       - random forest
       - xgboost regressor (performed the best when also coupled with a gridsearchcv layer for additional optimization)
