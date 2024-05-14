@@ -28,7 +28,7 @@ This repo demonstrates usage of a custom pre-trained model that can be used over
       - xgboost regressor (performed the best when also coupled with a gridsearchcv layer for additional optimization)
 6. **TEST MODEL:**
    - This is all still being carried out in the reseach.ipynb notebook with metrics that show which model performed the best. Ideally, the data science/machine learning engineering team would have sprints set-aside during development as well as after deployment to continue to massage the machine learning model and algorithms to get better results and optimize results. This can be done with algorithm fine-tuning, better data, more data, more feature engineering. Time needs to be allocated for this if we want to see better results and this should be incorporated as continuous work during an AGILE SPRINT and treated as such.
-   - This would also be the step where we would need deploy the model and host the end-user experience and test outputs to ensure it will deploy as expected in the next step.
+   - This would also be the step where we would need to deploy the model and host the end-user experience and test outputs to ensure it will deploy as expected in the next step.
    - Data Engineers and ML Engineers would take over at this step. The Data scientists and ML Engineers solely should be focused on the machine learning models and a seperate team would ideally handle deployment of the models. Additional coding and scripting and pipeline work is needed to deploy the models.
    - The data science team, with the help of data engineers, would implement the models in the form of pickle files.
 7. **DEPLOYMENT:**
