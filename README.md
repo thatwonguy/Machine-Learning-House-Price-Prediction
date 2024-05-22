@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Machine-Learning-House-Price-Prediction
 
 Usage and implementation of a machine learning algorithm to allow for house price predictions in california.
