@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import shap
 import matplotlib.pyplot as plt
@@ -99,7 +100,7 @@ def show_map(latitude, longitude):
     map_html = california_map._repr_html_()
 
     # Display the HTML map in Streamlit
-    st.components.v1.html(map_html, width=700, height=500)
+    components.html(map_html, width=700, height=500)
 
 # Main Panel
 
