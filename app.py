@@ -6,9 +6,6 @@ from xgboost import XGBRegressor
 import pickle
 import folium
 
-# Remove warnings
-st.set_option('deprecation.showPyplotGlobalUse', False)
-
 st.write("""
 # California House Price Prediction App
 
@@ -93,10 +90,10 @@ df = user_input_features()
 
 def show_map(latitude, longitude):
     # Create a map centered around California
-    california_map = folium.Map(location=[latitude, longitude], zoom_start=6)
+    california_map = folium.Map(location=[float(latitude), float(longitude)], zoom_start=6)
 
     # Add a marker for the specified latitude and longitude
-    folium.Marker([latitude, longitude], popup='Location').add_to(california_map)
+    folium.Marker([float(latitude), float(longitude)], popup='Location').add_to(california_map)
 
     # Render the map to HTML
     map_html = california_map._repr_html_()
@@ -113,7 +110,7 @@ st.write('---')
 
 # Print Map location
 st.header('Map showing prediction location proximity')
-map = show_map(df['latitude'], df['longitude'])
+map = show_map(df['latitude'].iloc[0], df['longitude'].iloc[0])
 
 
 # load pre-trained model
