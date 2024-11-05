@@ -8,6 +8,13 @@ This repo demonstrates usage of a custom pre-trained model that can be used over
 
 This project is an end-to-end machine learning pipeline for predicting house values based on user-input parameters. The pipeline covers all MLOps stages, including data gathering, preprocessing, model training, testing, deployment, monitoring, and retraining, with a focus on automation, version control, and reproducibility.
 
+```python
+# the notebook used to carry out the ML/ data science work
+research.ipynb
+
+# the python code used to create the MVP result for end-user experience with MLOPS backend considerations created for it using streamlit, to keep it running and functional, outlined below in this README.md 
+app.py
+```
 ---
 
 
