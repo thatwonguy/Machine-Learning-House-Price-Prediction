@@ -21,9 +21,9 @@ This project is an end-to-end machine learning pipeline for predicting house val
    Once we understand a final outcome we want, we need to gather the relevant data that would allow us to do that.
 
    **Key Points for MLOPS:**
-      - Objective: Collect relevant, high-quality data to train a robust model.
-      - Source: U.S. Census data on housing prices (from Kaggle).
-      - Process: Define success metrics for the model, such as mean absolute error (MAE), and collect data that aligns with these goals.
+      - **Objective**: Collect relevant, high-quality data to train a robust model.
+      - **Source**: U.S. Census data on housing prices (from Kaggle).
+      - **Process**: Define success metrics for the model, such as mean absolute error (MAE), and collect data that aligns with these goals.
       - Versioning: Use DVC (Data Version Control) to track data changes.
    - ***We landed on US Census data on house prices, with a target column that provides house values that we can train our data on.***
 
@@ -31,9 +31,9 @@ This project is an end-to-end machine learning pipeline for predicting house val
    Here we bring in the data into a notebook and perform EDA, getting a good sense of the data, removing null values, and cleaning the data to see how we can work with it and what would be the best machine learning model to use and determine if we need more data or different data and continuing to prepare the data to ensure this data is clean and adequate to address the question we want answered with our model.
 
    **Key Points for MLOPS:**
-   - EDA & Preprocessing: Clean the data, handle missing values, and document all steps. Ensure - transformations are clearly documented and stored in scripts for reproducibility.
-   - Feature Engineering: Perform feature selection and transformation based on correlation, variance, and model requirements.
-   - Consistency: Document transformations to ensure new data undergoes identical preprocessing steps before inference.
+   - **EDA & Preprocessing**: Clean the data, handle missing values, and document all steps. Ensure - transformations are clearly documented and stored in scripts for reproducibility.
+   - **Feature Engineering**: Perform feature selection and transformation based on correlation, variance, and model requirements.
+   - **Consistency**: Document transformations to ensure new data undergoes identical preprocessing steps before inference.
 3. **DATA WRANGLING:**  
    This goes hand in hand with data preparation above. Obtaining all the data and prepping, preprocessing, cleaning and transforming the data. Please note: the preprocessing step needs to be clearly documented and defined, as any new data being fed into the machine learning model will always have to be preprocessed in the same consistent manner orderwise the Machine Learning model will not provide the results.
 4. **ANALYSE DATA:**:
@@ -45,9 +45,9 @@ This project is an end-to-end machine learning pipeline for predicting house val
    - xgboost regressor (performed the best when also coupled with a gridsearchcv layer for additional optimization)(used in this repo as high level demo in `research.ipynb`)
 
    **Key Points for MLOPS:**
-   - Model Selection: Evaluate models (e.g., Linear Regression, Random Forest, XGBoost) using k-fold cross-validation and metrics like RMSE and R².
-   - Hyperparameter Tuning: Use GridSearchCV or other tuning methods to optimize model parameters.
-   - Automated Training: Set up training in a pipeline (e.g., Airflow) to automate retraining when new data is added or metrics degrade.
+   - **Model Selection**: Evaluate models (e.g., Linear Regression, Random Forest, XGBoost) using k-fold cross-validation and metrics like RMSE and R².
+   - **Hyperparameter Tuning**: Use GridSearchCV or other tuning methods to optimize model parameters.
+   - **Automated Training**: Set up training in a pipeline (e.g., Airflow) to automate retraining when new data is added or metrics degrade.
 
 6. **TEST MODEL:**  
    This is all still being carried out in the reseach.ipynb notebook with metrics that show which model performed the best. Ideally, the data science/machine learning engineering team would have sprints set-aside during development as well as after deployment to continue to massage the machine learning model and algorithms to get better results and optimize results. This can be done with algorithm fine-tuning, better data, more data, more feature engineering. Time needs to be allocated for this if we want to see better results and this should be incorporated as continuous work during an AGILE SPRINT and treated as such.  
@@ -59,23 +59,23 @@ This project is an end-to-end machine learning pipeline for predicting house val
    - **Yes**, a machine learning model, along with the results and data and algorithm can all be saved in a neat package to be implemented for any new data so that no additional training is necessary.
 
    **Key Points for MLOPS:**
-   - Testing Environment: Conduct testing in a controlled staging environment mimicking production.
-   - Metrics Evaluation: Track performance metrics (accuracy, bias-variance analysis) and save results in a database (e.g., MLflow or WandB).
-   - Validation: Perform A/B testing and feature importance analysis to validate results against expected outcomes.
+   - **Testing Environment**: Conduct testing in a controlled staging environment mimicking production.
+   - **Metrics Evaluation**: Track performance metrics (accuracy, bias-variance analysis) and save results in a database (e.g., MLflow or WandB).
+   - **Validation**: Perform A/B testing and feature importance analysis to validate results against expected outcomes.
 7. **DEPLOYMENT:**  
    As touched upon in the previous steps last bullet point. The data engineering team would ideally abstract this pickle file in the code so that any new models would simply replace this model with a new one and no other portions of the established code-base would need to change. This allows the data science team or ml engineers to focus their efforts on algorithms and improving results without breaking any other section of the architecture or delivery pipeline. Good micro-services architecture and potential usage of OOPS programming on the part of data engineers would need to be implemented here.  
    
    These pickle files would essentially be pre-trained models (the best one we want to use) that would be incorporated into the code to be used for end-users. If the data science team finds a better model, they simply provide the new pickle file, and the old file gets replaced, wheraupon the end-user will immediately see better and more accurate results. This can change depending on what kind of infrastructure your team is using or has available to use.
 
    **Key Points for MLOPS:**
-   - Containerization: Use Docker to package the model with dependencies for consistent deployment.
-   - Orchestration: Deploy the container using Kubernetes to ensure scalability and resilience.
-   - CI/CD Pipeline: Automate deployment with CI/CD tools (e.g., Jenkins or GitHub Actions) to push model updates seamlessly.
+   - **Containerization**: Use Docker to package the model with dependencies for consistent deployment.
+   - **Orchestration**: Deploy the container using Kubernetes to ensure scalability and resilience.
+   - **CI/CD Pipeline**: Automate deployment with CI/CD tools (e.g., Jenkins or GitHub Actions) to push model updates seamlessly.
 
    For Model Monitoring and Maintenance for the MLOPS team:  
-   - Monitoring: Track model performance in production with drift detection, alerting for performance degradation, and logging in tools like Prometheus or Grafana.
-   - Retraining Triggers: Set up conditions (e.g., data drift or accuracy drop) to trigger retraining and notify the team.
-   - Model Governance: Maintain a record of deployed models, their versions, and performance metrics for audit and rollback as needed.
+   - **Monitoring**: Track model performance in production with drift detection, alerting for performance degradation, and logging in tools like Prometheus or Grafana.
+   - **Retraining Triggers**: Set up conditions (e.g., data drift or accuracy drop) to trigger retraining and notify the team.
+   - **Model Governance**: Maintain a record of deployed models, their versions, and performance metrics for audit and rollback as needed.
 
    The end result of this particular exercise demonstrating this process can be seen here by clicking the link below:
    - ### [https://ml-house-price-prediction-california.streamlit.app/](https://ml-house-price-prediction-california.streamlit.app/)
