@@ -12,7 +12,9 @@ This project is an end-to-end machine learning pipeline for predicting house val
 # the notebook used to carry out the ML/ data science work
 research.ipynb
 
-# the python code used to create the MVP result for end-user experience with MLOPS backend considerations created for it using streamlit, to keep it running and functional, outlined below in this README.md 
+# the python code used to create the MVP result for end-user experience 
+# with MLOPS backend considerations created for it using streamlit, to keep 
+# it running and functional, outlined below in this README.md 
 app.py
 ```
 ---
